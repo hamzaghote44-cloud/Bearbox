@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090d">
+  <meta name="description" content="BEARBOX — discover your next favorite movie.">
+  <title>BEARBOX — Movie Discovery</title>
+  <link rel="preconnect" href="https://image.tmdb.org">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="BEARBOX home">BEAR<span>BOX</span><i>.</i></a>
+    <nav aria-label="Main navigation"><a href="#home" class="active">Home</a><a href="#movies">Movies</a><a href="#about">About</a></nav>
+    <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search movies..." aria-label="Search movies"></label>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="pulse"></span> YOUR MOVIE UNIVERSE</p>
+        <p class="featured-label">FEATURED PICK</p>
+        <h1 id="hero-title">Stories worth<br><em>staying up for.</em></h1>
+        <p class="hero-copy">Find your next obsession. Explore iconic films, discover hidden gems, and build your next watchlist.</p>
+        <div class="hero-actions"><a class="button primary" href="#movies">Explore movies <span>↘</span></a><button class="button ghost" id="random-btn" type="button">Surprise me ✦</button></div>
+        <div class="hero-note"><span class="note-line"></span> A world of cinema, one click away.</div>
+      </div>
+      <div class="hero-index"><span>BB / 001</span><span>DISCOVER SOMETHING NEW</span></div>
+    </section>
+
+    <section class="catalog" id="movies">
+      <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Popular <em>right now</em></h2></div><span id="result-count" class="result-count">06 FILMS</span></div>
+      <div class="filters" role="group" aria-label="Filter by genre">
+        <button class="filter active" data-genre="All">All films</button><button class="filter" data-genre="Sci-Fi">Sci-Fi</button><button class="filter" data-genre="Action">Action</button><button class="filter" data-genre="Adventure">Adventure</button><button class="filter" data-genre="Drama">Drama</button>
+      </div>
+      <div id="movies-grid" class="movies-grid" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state" hidden>No films found. Try another search.</p>
+    </section>
+
+    <section class="about" id="about"><div class="about-mark">BB<span>.</span></div><div><p class="eyebrow">WELCOME TO BEARBOX</p><h2>Good stories.<br><em>Great discoveries.</em></h2></div><p class="about-copy">A fan-made movie discovery experience built for curious film lovers. Browse the collection and find your next favorite.</p></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home">BEAR<span>BOX</span><i>.</i></a><p>Made for movie lovers. <span>© <span id="year"></span> BEARBOX</span></p><a href="#home" class="back-top">BACK TO TOP ↑</a></footer>
+
+  <dialog id="movie-dialog" class="movie-dialog"><button class="dialog-close" id="dialog-close" aria-label="Close details">×</button><img id="dialog-image" alt=""><div class="dialog-content"><p id="dialog-meta" class="eyebrow"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><a id="trailer-link" class="button primary" href="https://www.youtube.com/results?search_query=official+movie+trailer" target="_blank" rel="noopener noreferrer">Find official trailer ↗</a></div></dialog>
+</body>
+</html>
